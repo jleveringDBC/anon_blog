@@ -6,9 +6,14 @@ post '/tags' do
 	redirect ("/tags/#{params[:tag]}")
 end
 
-get '/tags' do
+post '/tagsname/:name' do
+	tag = Tag.find_by_name(params[:name])
+	redirect("/tags/#{tag.id}")
+end
+
+get '/tags/:tag' do
 	begin
-		@tag = Tag.find_by_name(params[:tag])
+		@tag = Tag.find(params[:tag])
 	rescue
 	ensure
 		puts "loading tag page"

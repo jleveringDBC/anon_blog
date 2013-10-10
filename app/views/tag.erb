@@ -1,18 +1,18 @@
 <% if @tag %>
-  <div class="container">
+  <div class="container" id="stage">
     <h3><%=@tag.name%></h3>
     
     <body>
       <h4> Posts: </h4>
 
       <% @tag.posts.each do |post| %>
-      <a href='/view/<%=post.id%>'><%= post.title %></a>
+      <a href="/" class="post_link" title='/view/<%=post.id%>'><%= post.title %></a>
       <% end %>
     </body>
-
+    <br><br><br>
+    <a href='/'>SHOW ME THE POSTS</a>
     </div>
-  <br><br><br>
-  <a href='/'> Yo, home to Bel-Air!</a>
+  
   </div>
 
 <% else %>

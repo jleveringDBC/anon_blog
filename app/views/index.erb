@@ -1,9 +1,10 @@
 <div class="container">
-  <h1>Welcome to Twitter!</h1>
-  <p><a id="tag_search" href="">Search for posts by tag</a></p>
-  <div id="search_box"></div>
-  <p><a id="create" href='/create'>Add a new post</a></p>
-
+  <h1 class="page-header">Welcome to Twitter!</h1>
+  <div class="page-header">
+    <p><a id="tag_search" href="">Search for posts by tag</a></p>
+    <div id="search_box"></div>
+    <p><a id="create" href='/create'>Add a new post</a></p>
+  </div>
   <div class="stage" id="stage">
     <table>
       <tr>
@@ -12,7 +13,7 @@
       </tr>
       <% Post.all.each do |post| %>
       <tr>
-        <td> <a id="post_link" href="/view/<%=post.id%>"> <%= post.title %> </a></td>
+        <td> <a class="post_link" href='/create' title="/view/<%=post.id%>"> <%= post.title %> </a></td>
         <td> 
           <% post.tags.each do |tag| %>
           #<%= tag.name %> 
