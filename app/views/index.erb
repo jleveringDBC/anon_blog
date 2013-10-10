@@ -1,22 +1,25 @@
 <div class="container">
-  <h1>Welcome to Sinatra!</h1>
-  <p>Search for posts by tag</p>
-  <p><a href='/create'>Add a new post</a></p>
+  <h1>Welcome to Twitter!</h1>
+  <p><a id="tag_search" href="">Search for posts by tag</a></p>
+  <div id="search_box"></div>
+  <p><a id="create" href='/create'>Add a new post</a></p>
 
-  <table>
-    <tr>
-      <th>Post Title</th>
-      <th>Tags</th>
-    </tr>
-    <% Post.all.each do |post| %>
-    <tr>
-      <td> <%= post.title %> </td>
-      <td> 
-        <% post.tags.each do |tag| %>
-        <%= tag.name %> 
-        <% end %>
-      </td>
-    </tr>
-    <% end %>
-  </table>
+  <div class="stage" id="stage">
+    <table>
+      <tr>
+        <th>Post Title</th>
+        <th>Tags</th>
+      </tr>
+      <% Post.all.each do |post| %>
+      <tr>
+        <td> <a id="post_link" href="/view/<%=post.id%>"> <%= post.title %> </a></td>
+        <td> 
+          <% post.tags.each do |tag| %>
+          #<%= tag.name %> 
+          <% end %>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
 </div>

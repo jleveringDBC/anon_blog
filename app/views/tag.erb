@@ -1,0 +1,23 @@
+<% if @tag %>
+  <div class="container">
+    <h3><%=@tag.name%></h3>
+    
+    <body>
+      <h4> Posts: </h4>
+
+      <% @tag.posts.each do |post| %>
+      <a href='/view/<%=post.id%>'><%= post.title %></a>
+      <% end %>
+    </body>
+
+    </div>
+  <br><br><br>
+  <a href='/'> Yo, home to Bel-Air!</a>
+  </div>
+
+<% else %>
+
+<h1> NO TAGS FOUND :( </h1>
+<a href="/"><img src="http://1.bp.blogspot.com/-p1nPSZa1NNw/UW81W_61ZgI/AAAAAAAAAjw/pd1N-Yhz-pY/s1600/sad-face-smiley-facebook.jpg" ></a>
+
+<% end %>
