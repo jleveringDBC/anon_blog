@@ -1,11 +1,22 @@
 <div class="container">
   <h1>Welcome to Sinatra!</h1>
-  <p>Hello, world!</p>
+  <p>Search for posts by tag</p>
+  <p><a href='/create'>Add a new post</a></p>
 
   <table>
     <tr>
-      <th>File Description</th>
-      <th>File Location</th>
+      <th>Post Title</th>
+      <th>Tags</th>
     </tr>
+    <% Post.all.each do |post| %>
+    <tr>
+      <td> <%= post.title %> </td>
+      <td> 
+        <% post.tags.each do |tag| %>
+        <%= tag.name %> 
+        <% end %>
+      </td>
+    </tr>
+    <% end %>
   </table>
 </div>
